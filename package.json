@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "run-s build:client build:aot build:lambda-server",
-    "build:client": "ng build -prod --build-optimizer --app 0",
+    "build:client": "ng build -prod --build-optimizer --app 0 --deploy-url 'ngtest/'",
     "build:aot": "ng build --aot --app 1",
     "build:lambda-server": "cp server.js ./dist/ && cp lambda.js ./dist/ && cp package-dist.json ./dist/package.json",
     "test": "ng test",
