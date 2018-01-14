@@ -5,11 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "run-s build:client build:aot build:server build:lambda",
+    "build": "run-s build:client build:aot build:lambda-server",
     "build:client": "ng build -prod --build-optimizer --app 0",
     "build:aot": "ng build --aot --app 1",
-    "build:server": "webpack",
-    "build:lambda": "webpack --config webpack.lambda.config.js",
+    "build:lambda-server": "cp server.js ./dist/ && cp lambda.js ./dist/ && cp package-dist.json ./dist/package.json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -26,9 +25,7 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/platform-server": "^5.0.3",
     "@angular/router": "^5.0.0",
-    "aws-serverless-express": "^3.0.2",
     "core-js": "^2.5.1",
-    "express": "^4.16.2",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.18"
   },
